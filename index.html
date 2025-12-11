@@ -1,1 +1,98 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter App</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(134deg, #6e8efb, #a777e3);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container{
+            background-color: lightblue;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 14.9px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1{
+            margin-bottom: 1rem;
+            font-size: 2.44rem;
+        }
+        .counter{
+            font-size: 4rem;
+            font-weight: bold;
+            color: #444;
+            margin: 1rem 0;
+        }
+        .buttons{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn{
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            color: white;
+        }
+        .btn:hover{
+            transform: scale(1.1);
+        }
+        .increase{
+            background-color: #4caf50;
+        }
+        .decrease{
+            background-color: #f44337;
+        }
+        .reset{
+            background-color: #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Counter App</h1>
+        <div class="counter" id="counter">0</div>
+        <div class="buttons">
+            <button class="btn decrease" onclick="decrease()">-</button>
+            <button class="btn reset" onclick="reset()">Reset</button>
+            <button class="btn increase" onclick="increase()">+</button>
+        </div>
+    </div>
+    <script>
+        let counter = 0;
+        function display(){
+            document.getElementById('counter').innerHTML = counter;
+        }
+        function increase(){
+            counter++;
+            display();
+        }
+        function decrease(){
+            counter--;
+            display();
+        }
+        function reset(){
+            counter = 0;
+            display();
+        }
+    </script>
+</body>
+</html>
+
